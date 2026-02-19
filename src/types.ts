@@ -5,4 +5,13 @@ export type MoonData = {
     planet_id: number;
     name: string;
     discovered_at: string;
+    image: string;
+}
+export type PlanetDataList = MoonData[]
+
+export type PlanetData = {
+    id: number;
+    name: string;
+    discovered_at: string;
+    image: string;
 }

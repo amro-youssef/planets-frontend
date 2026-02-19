@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import type { MoonData, MoonDataList } from "../../types";
+import "./Moons.css";
 
 function Moons() {
     const [moonData, setMoonData] = useState<MoonDataList>([]);
@@ -24,16 +25,17 @@ function Moons() {
 
     return (
         <div>
-            {moonData.map((moon: MoonData) => {
-                return <div>
-                    <div>{moon.name}</div>
-                    <div>Id: {moon.id}</div>
-                    <div>PlanetID: {moon.planet_id}</div>
-                    <div>{Date(moon.discovered_at)}</div>
-                    <hr/>
-
-                </div>
-            })}
+            <div className="cardContainer">
+                {moonData.map((moon: MoonData) => {
+                    return <div className="card" key={moon.id}>
+                        <div>Name: {moon.name}</div>
+                        <div>Id: {moon.id}</div>
+                        <div>PlanetID: {moon.planet_id}</div>
+                        <div>Date discovered: {new Date(moon.discovered_at).toLocaleDateString()}</div>
+                        <img height="256" width="256" src={moon.image} />
+                    </div>
+                })}
+            </div>
         </div>
     )
 }
