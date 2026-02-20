@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import type { PlanetDataList, PlanetData } from "../../types";
+import './Planets.css'
 
 function Planets() {
     const [planetData, setPlanetData] = useState<PlanetDataList>([]);
@@ -21,6 +22,10 @@ function Planets() {
     
             fetchPlanets();
         }, [])
+
+        const addPlanet = () => {
+
+        }
     
         return (
             <div>
@@ -34,6 +39,28 @@ function Planets() {
                             <img height="256" width="256" src={moon.image} />
                         </div>
                     })}
+                </div>
+
+                <div className="formContainer">
+                    <h2>Add a planet to database:</h2>
+                    <form className="form">
+                        <div>
+                            <label htmlFor="planet-name">Planet Name:  </label>
+                            <input name="planet-name"/>
+                        </div>
+                        <div>
+                            <label htmlFor="discovered_at">Discovered at:  </label>
+                            <input name="discovered_at" type="date" />
+                        </div>
+                        <div>
+                            <label htmlFor="image_url">Image url: </label>
+                            <input name="image_url" type="file"/>
+                        </div>
+                        <div>
+                            <button name="submit-button">Add Planet</button>
+                        </div>
+
+                    </form>
                 </div>
             </div>
         )
