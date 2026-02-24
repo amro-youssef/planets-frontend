@@ -15,3 +15,9 @@ export type PlanetData = {
     discovered_at: string;
     image: string;
 }
+
+export type PlanetFormData = {
+    name: string;
+    discovered_at: string;
+    image: string;
+}
