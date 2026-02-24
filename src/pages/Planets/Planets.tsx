@@ -73,10 +73,12 @@ function Planets() {
             <div className="cardContainer">
                 {planetData.map((moon: PlanetData) => {
                     return <div className="card" key={moon.id}>
+                        <div className="text">
                         <div>Name: {moon.name}</div>
                         {/* <div>Id: {moon.id}</div> */}
                         {/* <div>PlanetID: {moon.planet_id}</div> */}
                         <div>Date discovered: {new Date(moon.discovered_at).toLocaleDateString()}</div>
+                        </div>
                         <img height="256" width="256" src={moon.image} />
                     </div>
                 })}
@@ -94,7 +96,7 @@ function Planets() {
                         <input name="discovered_at" type="date" value={formData.discovered_at} onChange={handleChange}/>
                     </div>
                     <div>
-                        <label htmlFor="image">Image url: </label>
+                        <label htmlFor="image">Image URL: </label>
                         <input name="image" value={formData.image} onChange={handleChange}/>
                     </div>
                     <div>

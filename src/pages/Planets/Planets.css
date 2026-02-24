@@ -1,11 +1,65 @@
 .form {
-    margin-top: 30px;
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
+    gap: 14px;
+    padding: 20px 40px;
+}
+
+/* Each direct child div of the form is a single row: label + input */
+.form > div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Make labels a fixed-width column so all inputs align vertically */
+.form label {
+    width: 140px; /* adjust this value to shift the input column */
+    text-align: right;
+    font-size: 0.95rem;
+    /* color: #0c4c84ff; */
+}
+
+.form input {
+    padding: 6px 8px;
+    border: 1px solid #cfcfcf;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    width: 30%;
+}
+
+/* Position the submit button under the input column by offsetting it
+   with the same left margin as the inputs (label width + gap) */
+.form > div:last-child {
+    /* keep the button aligned with inputs */
+    display: flex;
     justify-content: flex-start;
-    align-items: flex-start;
-    gap: 15px;
-    padding: 20px 40px
+    margin-left: calc(140px + 14px);
+}
+
+/* Responsive: on small screens, stack label above input */
+@media (max-width: 720px) {
+    .form > div {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .form label {
+        width: auto;
+        text-align: left;
+        margin-bottom: 6px;
+    }
+
+    .form > div:last-child {
+        margin-left: 0;
+        align-items: center;
+    }
+
+    .form input {
+        width: 70%;
+    }
 }
 
 .formContainer {
