@@ -7,6 +7,13 @@ export type MoonData = {
     discovered_at: string;
     image: string;
 }
+export type MoonFormData = {
+    name: string;
+    discovered_at: string;
+    image: string;
+    planet_name: string;
+}
+
 export type PlanetDataList = MoonData[]
 
 export type PlanetData = {

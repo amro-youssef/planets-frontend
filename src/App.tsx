@@ -15,7 +15,7 @@ function App() {
     <>
       <Navbar/>
       <Routes>
-        <Route path="/moons" element={<Moons/>} />
+        <Route path="/" element={<Moons/>} />
         <Route path="/planets" element={<Planets/>} />
         <Route path="/missions" element={<Missions />} />
         <Route path="*" element={<NotFound />} />

@@ -1,12 +1,11 @@
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./Navbar.css";
-import { useState } from "react";
 
 function Navbar() {
     return (
         <nav className='navbar'>
             <NavLink
-                to="/moons"
+                to="/"
                 className={({ isActive }) =>
                     isActive ? "navbar-active" : ""
                 }
@@ -23,14 +22,14 @@ function Navbar() {
                 Planets
             </NavLink>
 
-            <NavLink
+            {/* <NavLink
                 to="/missions"
                 className={({ isActive }) =>
                     isActive ? "navbar-active" : ""
                 }
             >
                 Missions
-            </NavLink>
+            </NavLink> */}
         </nav>
     )
 }

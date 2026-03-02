@@ -1,7 +1,7 @@
 import { useEffect, useState, type ChangeEvent, type SubmitEvent } from "react";
 import { type PlanetDataList, type PlanetData, type PlanetFormData } from "../../types";
 import './Planets.css'
-import { isValidImageUrl } from "../../utils";
+import { getApiBase, isValidImageUrl } from "../../utils";
 
 function Planets() {
     const [planetData, setPlanetData] = useState<PlanetDataList>([]);
@@ -10,16 +10,12 @@ function Planets() {
         discovered_at: "",
         image: ""
     })
-
-    const API_BASE = import.meta.env.DEV
-                    ? '/api'
-                    : (import.meta.env.VITE_API_BASE ?? 'https://planets-backend-production.up.railway.app');
+    const API_BASE = getApiBase();
     
     useEffect(() => {
         const fetchPlanets = async () => {
             // In dev use the Vite proxy at /api which forwards to the remote backend.
             // In production use VITE_API_BASE if provided, otherwise fall back to the real backend URL.
-            
 
             const res = await fetch(`${API_BASE}/planets`);
             // optionally handle the response, e.g. const moons = await res.json();
