@@ -1,10 +1,9 @@
 # Planets Front-End
 
-A React + TypeScript front-end for the Planets full-stack application. This UI consumes the backend API and is deployed separately on Railway
+A React + TypeScript front-end for the Planets full-stack application. This UI consumes the backend API and is deployed separately.
 
-<img width="1298" height="896" alt="image" src="https://github.com/user-attachments/assets/604cc1be-01b4-4c3f-acaf-4b0fdf6db826" />
-
-<img width="1275" height="330" alt="image" src="https://github.com/user-attachments/assets/60afe9c7-74ee-4e08-b8f7-a0b7622bb303" />
+- **Backend hosting:** Railway
+- **Frontend hosting:** TBD (possibly GitHub Pages)
 
 ## Tech stack
 
@@ -19,6 +18,13 @@ npm install
 npm run dev
 ```
 
-## Deployment
+## Deployment (GitHub Pages)
 
-The backend API is deployed to Railway. The frontend hosting target is still being decided.
+This project is configured to deploy to GitHub Pages using the `gh-pages` package.
+
+1) Ensure the `homepage` and Vite `base` match your repo name.
+2) Run the deploy script to build and publish `dist/`.
+
+```bash
+npm run deploy
+```

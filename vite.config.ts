@@ -3,8 +3,8 @@ import react from '@vitejs/plugin-react'
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react()],
   base: '/planets-frontend/',
+  plugins: [react()],
   // forward requests to api/* to Railway backend
   server: {
     proxy: {
